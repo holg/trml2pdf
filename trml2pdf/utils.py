@@ -39,6 +39,8 @@ units = [
 
 def unit_get(size):
     global units
+    # htr dirty hack to make sure e.g. german style 1,5cm works
+    size = size.replace(',', '.')
     for unit in units:
         res = unit[0].search(size, 0)
         if res:
